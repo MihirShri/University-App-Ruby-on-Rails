@@ -1,0 +1,25 @@
+<% if resource.errors.any? %>
+  <div class="container">
+    <div class="row sign-up-form">
+      <div class="col s12 m12 l12">
+        <div class="card-panel red lighten-2">
+          <span class="white-text">
+            <div id="error_explanation">
+              <h5>
+                <%= I18n.t("errors.messages.not_saved",
+                            count: resource.errors.count,
+                            resource: resource.class.model_name.human.downcase)
+                %>
+              </h5>
+              <ul>
+                <% resource.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

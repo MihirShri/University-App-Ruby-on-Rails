@@ -1,0 +1,64 @@
+<%= render "devise/shared/error_messages", resource: resource %>
+<div class="container">
+  <div class="row center sign-up-form">
+    <div class="col s12 m12 l12">
+      <div class="card-panel">
+        <h3 class="header">Edit your profile</h3>
+        <div class="row">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+                <%= f.label :name %>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                <%= f.label :email, class: "active" %>
+              </div>
+            </div>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.password_field :password, autocomplete: "new-password" %>
+                <%= f.label :password %> <i class="left">(leave blank if you don't want to change it)</i><br />
+                <%# if @minimum_password_length %>
+                  <!--em><%#= @minimum_password_length %> characters minimum</em>-->
+                <%# end %>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+              <%= f.label :password_confirmation, "Confirm Password" %><br />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.password_field :current_password, autocomplete: "current-password" %>
+                <%= f.label :current_password %> <i class="left">(we need your current password to confirm your changes)</i><br />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.button '<i class="material-icons right">arrow_forward</i>Edit Profile'.html_safe, class: "btn orange waves-effect waves-light right" %>
+              </div>
+            </div>
+          <% end %>
+
+          <%= link_to "Back", :back, class: "btn orange waves-effect waves-light right" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
