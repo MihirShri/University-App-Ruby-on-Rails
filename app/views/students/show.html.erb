@@ -10,7 +10,15 @@
       <div class="card-content white-text">
         <span class="card-title"><%= @student.name %></span>
         <p><%= @student.email %></p>
-        <p>Course Enrollments: None</p>
+        <p>Course Enrollments: 
+          <% if @student.courses.empty? %>
+            None
+          <% else %>
+            <% @student.courses.each do |course| %>
+              <br><%= course.name %>
+            <% end %>
+          <% end %>
+        </p>
       </div>
       <% if @student == current_student %>
         <div class="card-action">

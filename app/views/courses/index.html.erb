@@ -13,7 +13,9 @@
           <p><%= course.description %></p>
         </div>
         <div class="card-action">
-          <a href="#">Enroll</a>
+          <% if student_signed_in? && !current_student.courses.include?(course) %>
+            <%= link_to "Enroll", student_enroll_path(course_id: course.id), method: :post %>
+          <% end %>
           <a href="#">Info</a>
         </div>
       </div>

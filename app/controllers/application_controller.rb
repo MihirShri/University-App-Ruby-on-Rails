@@ -1,10 +1,9 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate_student!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def after_update_path_for(resource)
-    puts 'this is happening yoyo mama'
-    flash[:notice] = "Account succesfully updated"
-    redirect_to resource
+  def after_sign_in_path_for(resource)
+    student_path(resource)
   end
 
   protected
