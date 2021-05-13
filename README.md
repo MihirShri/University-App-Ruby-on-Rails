@@ -13,4 +13,4 @@ Just clone this repository on your local machine and run **bundle install --with
 
 # Screenshots
 <img src="https://github.com/MihirShri/University-App-Ruby-on-Rails/blob/master/UnivApp1.jpg" />
-<img src="">
+<img src="https://github.com/MihirShri/University-App-Ruby-on-Rails/blob/master/UnivApp2.jpg">
