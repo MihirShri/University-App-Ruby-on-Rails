@@ -1,5 +1,5 @@
 # UNIVERSITY app using Ruby on Rails
-This is a University app created using the Ruby on Rails framework for web development. The users can create their profiles, add, edit and delete courses, see other students profiles and much more!</br>
+This is a University app created using the Ruby on Rails framework for web development and styled using SemanticUI. The users can create their profiles, add, edit and delete courses, see other students profiles and much more!</br>
 Sadly, the app isn't hosted :( but no worries, you can still clone this repo and check the app out on your local machine, just follow the steps below :D
 
 # Tools Used
